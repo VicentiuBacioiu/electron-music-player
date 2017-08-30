@@ -1,0 +1,17 @@
+{
+  "name": "electron-music-player",
+  "description": "Sample music player desktop application built with electron",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vicentiubacioiu/electron-music-player.git"
+  },
+  "license": "MIT",
+  "version": "1.0.0",
+  "main": "main.js",
+  "devDependencies": {
+    "electron": "^1.7.5"
+  },
+  "scripts": {
+    "start": "electron ."
+  }
+}
