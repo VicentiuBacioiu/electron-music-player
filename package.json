@@ -9,7 +9,8 @@
   "version": "1.0.0",
   "main": "main.js",
   "devDependencies": {
-    "electron": "^1.7.5"
+    "electron": "^1.7.5",
+    "howler": "^2.0.4"
   },
   "scripts": {
     "start": "electron ."

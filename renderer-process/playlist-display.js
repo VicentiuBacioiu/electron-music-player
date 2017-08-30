@@ -1,7 +1,14 @@
 const { ipcRenderer } = require('electron');
+const { Howl } = require('howler/dist/howler');
 
-ipcRenderer.on('put-files', (event, files) => {
-    console.log(files);
-});
+ipcRenderer.on('put-files', createPlaylist);
 
-ipcRenderer.send('get-files', "file://C:/Users/vicentiu.bacioiu/Downloads");
+ipcRenderer.send('get-files', "D:\\SkyDrive\\Music\\Alternative Rock");
+
+function createPlaylist(event, files){
+    var sound = new Howl({
+        src: ["D:\\SkyDrive\\Music\\Alternative Rock\\" + files[0]]
+      });
+       
+      sound.play();
+}
