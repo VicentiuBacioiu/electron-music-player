@@ -1,4 +1,31 @@
-<h1>salut</h1>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous" />
+
+<div class="container-fluid">
+    <br/>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div style="float: right; margin-top: 5px">
+                <button id="play" type="button" class="btn btn-default"><span class="glyphicon glyphicon-play"></button>
+                <button id="pause" type="button" class="btn btn-default"><span class="glyphicon glyphicon-pause"></button>
+                <button id="stop" type="button" class="btn btn-default"><span class="glyphicon glyphicon-stop"></button>
+            </div>
+            <h4 style="font-size: 18px;">Now playing</h4>
+        </div>
+        <div class="panel-body">
+            <div id="nowPlaying"></div>
+        </div>
+    </div>
+</div>
+<br/>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div id="list" class="list-group">
+            </div>
+        </div>
+    </div>
+</div>
 <script>
     require('./renderer-process/playlist-display')
 </script>
