@@ -3,13 +3,13 @@ const { ipcMain } = require('electron');
 
 // Attach listener in the main process with the given ID
 ipcMain.on('get-files', (event, path) => {
-    fs.readdir(path, parseFiles.bind(this, event));
+    fs.readdir(path, parseFiles.bind(this, event, path));
 });
 
 // Parse files from directory
-function parseFiles(event, err, items) {
+function parseFiles(event, path, err, items) {
     let newItems = filterItems(items);
-    event.sender.send('put-files', newItems);
+    event.sender.send('put-files', { folder: path, files: newItems });
 }
 
 // Filter only mp3 files

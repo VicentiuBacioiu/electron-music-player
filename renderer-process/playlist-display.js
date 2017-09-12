@@ -3,19 +3,18 @@ const { Howl } = require('howler/dist/howler');
 ipcRenderer.on('put-files', createPlaylist);
 
 let player;
-let folder = "D:\\SkyDrive\\Music\\Alternative Rock";
-ipcRenderer.send('get-files', folder);
+document.getElementById('choose').addEventListener('change', fileChosen);
 
 /**
  * Creates a playlist
  * @param {any} event - The event 
  * @param {any} files - The list of files
  */
-function createPlaylist(event, files) {
+function createPlaylist(event, data) {
     let list = document.getElementById('list');
 
-    files.forEach(function (element) {
-        let playFile = folder + '\\' + element;
+    data.files.forEach(function (element) {
+        let playFile = data.folder + '\\' + element;
 
         // create HTML entry
         list.innerHTML += `
@@ -44,12 +43,20 @@ function bindElements() {
 }
 
 /**
+ * Triggered when a file is chosen
+ */
+function fileChosen(){
+    var file = document.getElementById('choose');
+    ipcRenderer.send('get-files', file.files[0].path);
+}
+
+/**
  * Play a specific file
  * @param {any} - The event
  */
 function playFile(event) {
     let source = event.currentTarget.getAttribute('data-src');
-    let title = event.currentTarget.getAttribute('data-src');
+    let title = event.currentTarget.getAttribute('data-title');
     let banner = document.getElementById('nowPlaying');
 
     // stop existing player

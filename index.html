@@ -5,6 +5,16 @@
     <br/>
     <div class="panel panel-info">
         <div class="panel-heading">
+            <h4 style="font-size: 18px;">Choose folder</h4>
+        </div>
+        <div class="panel-body">
+            <input type="file" id="choose" style="display:none" webkitdirectory directory multiple/>
+            <label for="choose" class="btn btn-primary">Choose</label>
+        </div>
+    </div>
+    <br/>
+    <div class="panel panel-info">
+        <div class="panel-heading">
             <div style="float: right; margin-top: 5px">
                 <button id="play" type="button" class="btn btn-default"><span class="glyphicon glyphicon-play"></button>
                 <button id="pause" type="button" class="btn btn-default"><span class="glyphicon glyphicon-pause"></button>
@@ -28,4 +38,5 @@
 </div>
 <script>
     require('./renderer-process/playlist-display')
+
 </script>
